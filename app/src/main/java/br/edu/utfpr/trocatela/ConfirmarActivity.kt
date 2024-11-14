@@ -1,5 +1,7 @@
 package br.edu.utfpr.trocatela
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -31,6 +33,18 @@ class ConfirmarActivity : AppCompatActivity() {
     }
 
     fun btConfimarOnClick(view: View) {
+
+        val msg = "Cod: ${tvCod.text} - Qtd: ${tvQtd.text} - Valor: ${tvValor.text}"
+        val uri = "sms:+5546991124391"
+
+        val intent = Intent( Intent.ACTION_VIEW )
+        intent.setData( Uri.parse( uri ) )
+        intent.putExtra( "sms_body", msg )
+
+        startActivity( intent )
+
+
+
 
     }
 }
