@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class LancamentoActivity : AppCompatActivity() {
@@ -29,8 +30,21 @@ class LancamentoActivity : AppCompatActivity() {
 
 
     }
+
     fun btListarOnClick(view: View) {
         val intent = Intent( this, ListarActivity::class.java )
-        startActivity( intent )
+        getResult.launch( intent )
+    }
+
+
+    private val getResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult() ) {
+
+        if ( it.resultCode == RESULT_OK ) {
+            val cod = it.data?.getIntExtra( "codRetornado", 0 )
+            val etCod : EditText = findViewById( R.id.etCod )
+            etCod.setText( cod.toString() )
+        }
+
     }
 }

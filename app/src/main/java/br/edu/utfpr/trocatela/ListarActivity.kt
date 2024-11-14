@@ -2,6 +2,8 @@ package br.edu.utfpr.trocatela
 
 import android.os.Bundle
 import android.widget.ListView
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class ListarActivity : AppCompatActivity() {
@@ -17,7 +19,6 @@ class ListarActivity : AppCompatActivity() {
             setResult( RESULT_OK, intent )
             finish()
         }
-
-
     }
+
 }
