@@ -30,6 +30,7 @@ class LancamentoActivity : AppCompatActivity() {
 
     }
     fun btListarOnClick(view: View) {
-
+        val intent = Intent( this, ListarActivity::class.java )
+        startActivity( intent )
     }
 }
