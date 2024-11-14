@@ -12,9 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrocaTela"
         tools:targetApi="31">
+
         <activity
             android:name=".LancamentoActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

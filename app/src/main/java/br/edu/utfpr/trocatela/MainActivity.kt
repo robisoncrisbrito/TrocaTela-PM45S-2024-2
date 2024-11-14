@@ -1,5 +1,6 @@
 package br.edu.utfpr.trocatela
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btLancamentoOnClick(view: View) {
-
+        val intent = Intent(this, LancamentoActivity::class.java )
+        startActivity( intent )
     }
 }
